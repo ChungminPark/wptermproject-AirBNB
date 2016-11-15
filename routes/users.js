@@ -79,7 +79,7 @@ router.put('/:id', function(req, res, next) {
       return res.redirect('back');
     }
 
-    if (user.password !== req.body.current_password) {
+    if (!user.validatePassword(req.body.current_password)) {
       req.flash('danger', '현재 비밀번호가 일치하지 않습니다.');
       return res.redirect('back');
     }
