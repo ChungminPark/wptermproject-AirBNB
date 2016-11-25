@@ -22,6 +22,6 @@ schema.methods.validatePassword = function(password) {
   return bcrypt.compareSync(password, this.password);
 };
 
-var User = mongoose.model('User', schema);
+var User = mongoose.model('air-User', schema);
 
 module.exports = User;

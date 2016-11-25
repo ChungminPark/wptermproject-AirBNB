@@ -27,6 +27,6 @@ var schema = new Schema({
   toObject: {virtuals: true}
 });
 
-var Task = mongoose.model('Task', schema);
+var Task = mongoose.model('air-Task', schema);
 
 module.exports = Task;
