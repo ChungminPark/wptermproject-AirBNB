@@ -1,13 +1,18 @@
 form#form-task.form-inline(class='homes')
   .form
     .main
-      input(type='text', id='content', name='content', placeholder='숙소로 등록할 지역이 어디신가요?')
+      input(type='text', id='content', name='content', placeholder='제목')
+      input(type='text', id='content', name='content', placeholder='주소')
+      input(type='text', id='content', name='content', placeholder='숙소요금')
+      input(type='text', id='content', name='content', placeholder='편의시설')
+      input(type='text', id='content', name='content', placeholder='이용규칙')
+      input(type='text', id='content', name='content', placeholder='간단한 설명')    
     .sub
       .form-group
-        select.form-control(name='category')
-          option(value='개인', selected) 개인
-          option(value='가족') 가족
-          option(value='업무') 업무
+        select.form-control(name='지역')
+          option(value='서울', selected) 서울
+          option(value='인천') 인천
+          option(value='경기도') 경기도
           option(value='기타') 기타
       .form-group
         select.form-control(name='priority')
