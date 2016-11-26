@@ -46,3 +46,36 @@ a {
     }
   }
 }
+
+.form {
+  position: relative; // 왼쪽 상단 기준으로 0, 0
+  input {
+    width: 20em;
+  }
+  .fa-spin {
+    display: none;
+    position: absolute; // 떠있다
+    left: 21em;
+    top: 0.5em;
+  }
+  &.loading {
+    .fa-spin {
+      display: block;
+    }
+  }
+  .suggest-box {
+    position: absolute;
+    background-color: #212427;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    li {
+      padding: 0.5em 1em;
+      cursor: pointer; // 손가락 모양으로
+      list-style-type: none;
+      &:hover { // 마우스 올라오면 색 변경, 마치 누를 수 있는 것처럼
+        background-color: #659CD8;
+      }
+    }
+  }
+}
