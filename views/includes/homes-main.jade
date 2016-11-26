@@ -2,23 +2,10 @@ form#form-task.form-inline(class='homes')
   .form
     .main
       input(type='text', id='content', name='content', placeholder='목적지, 도시명, 주소')
-      input(type='text', id='content', name='content', placeholder='체크인 -> 체크아웃')
+      input(type='text', id='content', name='content', placeholder='체크인')
+      input(type='text', id='content', name='content', placeholder='체크아웃')
       input(type='text', id='content', name='content', placeholder='인원1명')
-    .sub
-      .form-group
-        select.form-control(name='지역')
-          option(value='서울', selected) 서울
-          option(value='인천') 인천
-          option(value='경기도') 경기도
-          option(value='기타') 기타
-      .form-group
-        select.form-control(name='priority')
-          option(value='3') 중요
-          option(value='2', selected) 보통
-          option(value='1') 사소
-  .actions
-      button#post-task.btn.btn-primary.btn-lg.btn-block(type='button') 저장
-
+      button#post-task.btn.btn-primary.btn-lg(type='button') 숙소 검색
 ul.tasks
 
 .no-task 
