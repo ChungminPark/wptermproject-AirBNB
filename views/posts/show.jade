@@ -9,6 +9,11 @@ block content
       span at #{moment(post.createdAt).format('YYYY-MM-DD HH:mm:ss')} 
       | 
       | (조회수 #{post.read})
-    p.well(style='white-space:pre;')= post.content
+    p.well(style='white-space:pre;')= post.title
+    p.well(style='white-space:pre;')= post.city
+    p.well(style='white-space:pre;')= post.fee
+    p.well(style='white-space:pre;')= post.facility
+    p.well(style='white-space:pre;')= post.rule
+    p.well(style='white-space:pre;')= post.description
     
     a.btn.btn-default(href='/posts') 목록

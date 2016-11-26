@@ -9,20 +9,20 @@
       a.navbar-brand(href='/') 
         i.fa.fa-home
     #navbar.collapse.navbar-collapse
-      ul.nav.navbar-nav
-        li
-          a(href='/users') Users
+      //ul.nav.navbar-nav
+      //  li
+      //    a(href='/users') Users
       ul.nav.navbar-nav.navbar-right
         if (currentUser)
           if (currentUser._id == "5833d670046c0e2ac46f2d64")
             li
-              a(href='/admin') 관리 페이지
+              a(href='/users') 관리 페이지
+            //li
+            //  a(href='/homes') 숙소 등록하기
             li
-              a(href='/homes') 숙소 등록하기
+              a(href='/posts/new') 호스팅 하기
             li
-              a(href='/posts') 호스팅 하기
-            li
-              a(href='/trips') 여행 
+              a(href='/posts') 여행 
             li
               a(href='/inbox') 메시지     
             li
@@ -33,11 +33,11 @@
               a(href='/signout') Signout
           else 
             li
-              a(href='/posts') 호스팅 하기
+              a(href='/posts/new') 호스팅 하기
+            //li
+            //  a(href='/homes') 숙소 등록하기
             li
-              a(href='/homes') 숙소 등록하기
-            li
-              a(href='/trips') 여행 
+              a(href='/posts') 여행 
             li
               a(href='/inbox') 메시지     
             li
@@ -48,9 +48,9 @@
               a(href='/signout') Signout
         else
           li
-            a(href='/posts') 호스팅 하기
-          li
-            a(href='/homes') 숙소 등록하기
+            a(href='/posts/new') 호스팅 하기
+          //li
+          //  a(href='/homes') 숙소 등록하기
           li
             a(href='/help') 도움말 
           li

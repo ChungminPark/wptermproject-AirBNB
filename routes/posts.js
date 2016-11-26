@@ -6,10 +6,19 @@ var router = express.Router();
 function validateForm(form, options) {
   var title = form.title || "";
   var email = form.email || "";
-  var content = form.content || "";
+  var description = form.description || "";
+  var city = form.city || "";
+  var fee = form.fee || "";
+  var facility = form.facility || "";
+  var rule = form.rule || "";
+
   title = title.trim();
   email = email.trim();
-  content = content.trim();
+  description = description.trim();
+  city = city.trim();
+  fee = fee.trim();
+  facility = facility.trim();
+  rule = rule.trim();
 
 // 필수 값이 빠졌을 경우 처리
   if (!email) {
@@ -28,7 +37,7 @@ function validateForm(form, options) {
   return '글 제목을 입력해주세요.';
   }
 
-  if (!content) {
+  if (!description) {
   return '글 내용을 입력해주세요.';
   }
 
@@ -76,7 +85,11 @@ router.post('/', function(req, res, next) {
     var newPost = new Post({
       title: req.body.title,
       email: req.body.email,
-      content: req.body.content,
+      city: req.body.city,
+      fee: req.body.fee,
+      facility: req.body.facility,
+      rule: req.body.rule,
+      description: req.body.description,
     });
     newPost.password = req.body.password;
 
@@ -102,7 +115,11 @@ router.put('/:id', function(req, res, next) {
 
     post.title = req.body.title;
     post.email = req.body.email;
-    post.content = req.body.content;
+    post.city = req.body.city;
+    post.fee = req.body.fee;
+    post.facility = req.body.facility;
+    post.rule = req.body.rule;
+    post.description = req.body.description;
     if (req.body.password) {
       post.password = req.body.password;
     }
