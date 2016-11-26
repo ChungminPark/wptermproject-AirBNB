@@ -11,7 +11,7 @@ function needAuth(req, res, next) {
 }
 
 router.get('/', needAuth, function(req, res, next) {
-  res.render('todos');
+  res.render('homes');
 });
 
 module.exports = router;
