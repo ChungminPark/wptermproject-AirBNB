@@ -1,9 +1,9 @@
 {
-  "name": "ex01",
+  "name": "wptermproject",
   "version": "0.0.0",
-  "homepage": "https://github.com/dongseop/mju-class-wp",
+  "homepage": "https://github.com/akadark/wptermproject",
   "authors": [
-    "Dongseop Kwon <dongseop@gmail.com>"
+    "Chungmin Park <chuck.m.park@gmail.com>"
   ],
   "license": "MIT",
   "ignore": [
