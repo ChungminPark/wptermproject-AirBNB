@@ -16,18 +16,34 @@
           a(href='/users') Users
       ul.nav.navbar-nav.navbar-right
         if (currentUser)
-          li
-            a(href='/host') 호스팅 하기
-          li
-            a(href='/trips') 여행 
-          li
-            a(href='/inbox') 메시지     
-          li
-            a(href='/help') 도움말 
-          li
-            a(href='/users/#{currentUser._id}') Profile
-          li
-            a(href='/signout') Signout
+          if (currentUser._id == "5833d670046c0e2ac46f2d64")
+            li
+              a(href='/admin') 관리 페이지
+            li
+              a(href='/host') 호스팅 하기
+            li
+              a(href='/trips') 여행 
+            li
+              a(href='/inbox') 메시지     
+            li
+              a(href='/help') 도움말 
+            li
+              a(href='/users/#{currentUser._id}') Profile
+            li
+              a(href='/signout') Signout
+          else 
+            li
+              a(href='/host') 호스팅 하기
+            li
+              a(href='/trips') 여행 
+            li
+              a(href='/inbox') 메시지     
+            li
+              a(href='/help') 도움말 
+            li
+              a(href='/users/#{currentUser._id}') Profile
+            li
+              a(href='/signout') Signout
         else
           li
             a(href='/host') 호스팅 하기
