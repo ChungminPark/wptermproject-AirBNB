@@ -16,7 +16,7 @@ $(function() {
         // Ajax의 결과를 잘 받았을 때
         // 화면에 받은 결과를 가지고 list를 rendering하고..
         var els = _.map(data, function(name) { // map은 array를 받아서 array를 돌려주는 것
-          return '<li>' + name + '</li>';       // _.으로 실행되는 것들은 underscore.js == lodash.js 같은 라이브러리로 통합
+          return '<li>' + name + '</li>';     // _.으로 실행되는 것들은 underscore.js == lodash.js 같은 라이브러리로 통합
         });
         $('.suggest-box').html(els.join('\n')).show(); // join은 array를 하나의 string으로 변환하는 친구
 

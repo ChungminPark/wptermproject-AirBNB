@@ -1,11 +1,11 @@
 /*global $:false */
 /*global _:false */
 /*jslint browser:true, devel: true */
-var TaskController = function() {
+var TaskController = function() { // 클로저를 이용. 내부 함수들을 전역으로 하지 않고 익명의 함수 내부에 넣어놓았기 때문에 마치 private처럼 다른 사람이 건드릴 수 없게 함.
   function setAjaxHandler() {
-    $( document ).ajaxStart(function() {
+    $( document ).ajaxStart(function() { // ajaxStart: ajax함수, ajax가 시작할때 class 이름에 loading add
       $("#main").addClass("loading");
-    }).ajaxStop(function() {
+    }).ajaxStop(function() { // ajax가 끝날때 loading remove
       $("#main").removeClass("loading");
     });
   }
@@ -18,9 +18,9 @@ var TaskController = function() {
   var Constructor = function () {
     var self = this;
     setAjaxHandler();
-    this.taskTemplate = _.template($("#task-template").html());
-    this.load();
-    $("#post-task").click(function() {
+    this.taskTemplate = _.template($("#task-template").html()); // _의 템플릿 기능을 사용하여, 템플릿을 미리 만들어줌. 데이터만 주면 이제 string이 나옴.
+    this.load(); // load는 하단에 prototype에 선언되어있음
+    $("#search-home").click(function() {
       self.postTask();
     }.bind(this));
     $("section.options a.option")
@@ -68,7 +68,7 @@ var TaskController = function() {
     });
   };
 
-  Constructor.prototype.render = function() {
+  Constructor.prototype.render = function() { // li로 변화됨
     var self = this;
     $("#main").toggleClass("no-task", (this.tasks.length <= 0));
     var html = _.map(this.tasks, function(task) {
@@ -79,7 +79,7 @@ var TaskController = function() {
       return "";
     });
     $("ul.tasks").html(html.join("\n"));
-    $("ul.tasks .check").click(self.postDone.bind(this));
+    $("ul.tasks .check").click(self.postDone.bind(this)); // 해당 버튼을 누르면 수행되게 이벤트 바인딩
     $(".task .remove").click(self.removeTask.bind(this));
   };
 
@@ -96,29 +96,31 @@ var TaskController = function() {
     return  _.find(this.tasks, {id: id});
   };
 
+  // update
   Constructor.prototype.postDone = function(e) {
     var task = this._findTask(e);
     if (!task) {
       return;
     }
-    var self = this;
+    var self = this; // update 할때는 put 사용
     $.ajax({
-      url: '/tasks/' + task.id,
+      url: '/tasks/' + task.id, // tasks에 update하는 부분으로 가서 put 실행되고 리턴
       method: 'PUT',
       dataType: 'json',
       data: {
         done: task.done ? false : true
       },
-      success: function(data) {
+      success: function(data) { // ok가 넘어오면 다시 render해줌
         task.done = data.done;
         self.render();
       }
     });
   };
 
+  // crate
   Constructor.prototype.postTask = function() {
     var self = this;
-    $.post("/tasks", $("#form-task").serialize(), function(data) {
+    $.post("/tasks", $("#form-task").serialize(), function(data) { // tasks에 create하는 부분으로가서 생성해줌
       console.log(data);
       self.tasks.push(data);
       self.render();
@@ -126,6 +128,7 @@ var TaskController = function() {
     });
   };
 
+  // delete
   Constructor.prototype.removeTask = function(e) {
     var task = this._findTask(e);
     if (!task) {
@@ -149,4 +152,4 @@ var TaskController = function() {
   };
 
   return Constructor;
-} ();
+} (); // 어떤 함수가 있고 그것을 실행 시킨 것이 taskController

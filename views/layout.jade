@@ -9,10 +9,12 @@ html(lang='ko')
     link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
     link(rel='stylesheet', href='/bower_components/font-awesome/css/font-awesome.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    
     script(src='/bower_components/jquery/dist/jquery.js')
     script(src='/bower_components/bootstrap/dist/js/bootstrap.js')
     script(src='/bower_components/lodash/lodash.min.js')
     script(src='/bower_components/moment/min/moment.min.js')
+    
   body
     block top-nav
       include ./includes/topnav
@@ -25,6 +27,6 @@ html(lang='ko')
               each msg in texts
                 p= msg           
       block content
-
+        
     block footer
       include ./includes/footer

@@ -7,7 +7,23 @@ form.homes {
     input[type='text'] {
       font-size: 1.4em;
       border: 1px solid #2c9cd2;
-      padding: 0.5em 1em;
+      padding: 1.5em 1em;
+      margin-top: 1em;
+      width: 12em;
+      box-sizing: border-box;
+    }
+    select {
+      font-size: 1.4em;
+      border: 1px solid #2c9cd2;
+      padding: 1.5em 1em;
+      margin-top: 1em;
+      width: 5em;
+      box-sizing: border-box;
+    }
+    select[name='guests'] {
+      font-size: 1.4em;
+      border: 1px solid #2c9cd2;
+      padding: 1.5em 1em;
       margin-top: 1em;
       width: 12em;
       box-sizing: border-box;

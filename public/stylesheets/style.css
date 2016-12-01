@@ -6,7 +6,21 @@ form.homes {
   form.homes .main input[type='text'] {
     font-size: 1.4em;
     border: 1px solid #2c9cd2;
-    padding: 0.5em 1em;
+    padding: 1.5em 1em;
+    margin-top: 1em;
+    width: 12em;
+    box-sizing: border-box; }
+  form.homes .main select {
+    font-size: 1.4em;
+    border: 1px solid #2c9cd2;
+    padding: 1.5em 1em;
+    margin-top: 1em;
+    width: 5em;
+    box-sizing: border-box; }
+  form.homes .main select[name='guests'] {
+    font-size: 1.4em;
+    border: 1px solid #2c9cd2;
+    padding: 1.5em 1em;
     margin-top: 1em;
     width: 12em;
     box-sizing: border-box; }
@@ -171,12 +185,12 @@ a {
 
 .jumbotron {
   margin-top: -1em;
-  background: url("/images/worldoftrips5_sm.jpg") no-repeat left top;
+  background: url("https://cdn-images-1.medium.com/max/2000/1*oMCH6q6iKk83BXnQQw_E1g.png") no-repeat left top;
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
   -o-background-size: 100%;
   background-size: 100%;
-  min-height: 20em;
+  min-height: 50em;
   color: #fff;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); }
 
