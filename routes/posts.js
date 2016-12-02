@@ -51,7 +51,7 @@ router.get('/', function(req, res, next) {
     if (err) {
       return next(err);
     }
-    res.render('index', {posts: posts});
+    res.render('posts/index', {posts: posts});
   });
 });
 

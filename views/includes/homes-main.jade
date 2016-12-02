@@ -115,30 +115,7 @@ form#form-task.form-inline(class='homes')
       button#search-home.btn.btn-primary.btn-lg(type='button') 숙소 검색
         
 ul.tasks
-      
-table.table.table-bordered
-  thead
-    tr
-      th 이메일
-      th 제목
-      th 날짜
-      th 조회수
-      th
-  tbody
-    each post in posts
-      tr
-        td= post.email
-        td
-          a(href='/posts/#{post.id}')= post.title
-        td= moment(post.createdAt).format('YYYY-MM-DD HH:mm:ss')
-        td= post.read
-        td
-          a.btn.btn-xs.btn-default(href='/posts/#{post.id}/edit') 수정
-          | 
-          a.btn.btn-xs.btn-default(data-id=post.id, class='delete') 삭제
           
-.no-task 
-  .alert.alert-info Task가 없습니다.
 script#task-template(type='text/template').
   <li class='task <%= doneStr %>' data-id='<%= id %>'>
     <span class='check'>

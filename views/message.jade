@@ -1,0 +1,17 @@
+extends layout
+
+block hero-unit
+  .container
+    select(name='inbox', id='inbox')
+      option(value='all', selected) 모든 메시지
+      option(value='important') 중요표시
+      option(value='unread') 읽지않음
+      option(value='reservation') 예약
+      option(value='wating') 수락 대기중
+      option(value='hidden') 숨긴 메시지
+    
+block content            
+  .container
+    .row
+      .col-md-10
+        

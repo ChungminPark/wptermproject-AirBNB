@@ -14,7 +14,25 @@ block content
     .row
       .col-sm-12
         include ./includes/homes-main
-        
+        table.table.table-hover
+          thead
+            tr
+              th 이메일
+              th 제목
+              th 날짜
+              th 조회수
+              th
+          tbody
+            each post in posts
+              tr
+                td
+                  a(href='/posts/#{post.id}')= post.title
+                td= moment(post.createdAt).format('YYYY-MM-DD HH:mm:ss')
+                td= post.read
+                td
+                  a.btn.btn-xs.btn-default(href='/posts/#{post.id}/edit') 수정
+                  | 
+                  a.btn.btn-xs.btn-default(data-id=post.id, class='delete') 삭제
     .spinner
       .background
       .foreground

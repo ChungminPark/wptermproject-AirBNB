@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var Post = require('../models/Post');
 var _ = require('lodash');
 
 var countries = [
@@ -8,7 +9,12 @@ var countries = [
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index');
+  Post.find({}, function(err, posts) {
+    if (err) {
+      return next(err);
+    }
+    res.render('index', {posts: posts});
+  });
 });
 
 router.get('/signin', function(req, res, next) {

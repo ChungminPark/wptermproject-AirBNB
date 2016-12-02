@@ -13,10 +13,9 @@ var configAuth = require('./config/auth');
 
 var routes = require('./routes/index'),
     users = require('./routes/users'),
-    homes = require('./routes/homes'),
     tasks = require('./routes/tasks'),
-    host = require('./routes/host'),
-    admin = require('./routes/admin'),
+    help = require('./routes/help'),
+    message = require('./routes/message'),
     posts = require('./routes/posts'); // 호스팅 하기
 
 var routeAuth = require('./routes/auth');
@@ -66,11 +65,10 @@ configAuth(passport);
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/homes', homes);
 app.use('/tasks', tasks);
-app.use('/host', host);
-app.use('/admin', admin);
+app.use('/help', help);
 app.use('/posts', posts);
+app.use('/message', message);
 routeAuth(app, passport);
 
 // catch 404 and forward to error handler

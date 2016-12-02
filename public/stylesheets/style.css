@@ -1,28 +1,28 @@
 form.homes {
   width: 100%;
-  margin: 0 0 1em 0;
+  margin: 0 0 0 0;
   padding: 1em;
   background: #acddf2; }
   form.homes .main input[type='text'] {
     font-size: 1.4em;
     border: 1px solid #2c9cd2;
-    padding: 1.5em 1em;
+    padding: 1.5em 1em 1em 1em;
     margin-top: 1em;
     width: 12em;
     box-sizing: border-box; }
   form.homes .main select {
-    font-size: 1.4em;
+    font-size: 1.3em;
     border: 1px solid #2c9cd2;
     padding: 1.5em 1em;
     margin-top: 1em;
     width: 5em;
     box-sizing: border-box; }
   form.homes .main select[name='guests'] {
-    font-size: 1.4em;
+    font-size: 1.3em;
     border: 1px solid #2c9cd2;
     padding: 1.5em 1em;
     margin-top: 1em;
-    width: 12em;
+    width: 9em;
     box-sizing: border-box; }
 
 .tasks {
@@ -183,6 +183,14 @@ body {
 a {
   color: #00B7FF; }
 
+.container #inbox {
+  font-size: 1.4em;
+  border: 1px solid;
+  padding: 1em 1em;
+  margin-top: 1em;
+  width: 10em;
+  box-sizing: border-box; }
+
 .jumbotron {
   margin-top: -1em;
   background: url("https://cdn-images-1.medium.com/max/2000/1*oMCH6q6iKk83BXnQQw_E1g.png") no-repeat left top;
@@ -193,6 +201,27 @@ a {
   min-height: 50em;
   color: #fff;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); }
+
+.jumbotron-help {
+  margin-top: -1em;
+  background: url("http://blog.airbnb.com/wp-content/uploads/Header_feature.jpg") no-repeat left top;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  min-height: 35em;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); }
+  .jumbotron-help #help-input {
+    font-size: 1.6em;
+    border: 1px solid #fff;
+    padding: 1.5em 1em;
+    margin-top: 12em;
+    margin-left: 3em;
+    width: 90%;
+    box-sizing: border-box; }
+  .jumbotron-help h1 {
+    color: #fff;
+    margin-left: 35%; }
 
 .form-actions {
   padding: 19px 20px 20px;
