@@ -17,8 +17,6 @@
           if (currentUser._id == "5833d670046c0e2ac46f2d64")
             li
               a(href='/users') 관리 페이지
-            //li
-            //  a(href='/homes') 숙소 등록하기
             li
               a(href='/posts/new') 호스팅 하기
             li
@@ -34,8 +32,6 @@
           else 
             li
               a(href='/posts/new') 호스팅 하기
-            //li
-            //  a(href='/homes') 숙소 등록하기
             li
               a(href='/posts') 여행 
             li
@@ -43,9 +39,9 @@
             li
               a(href='/help') 도움말 
             li
-              a(href='/users/#{currentUser._id}') Profile
+              a(href='/users/#{currentUser._id}') 프로필
             li
-              a(href='/signout') Signout
+              a(href='/signout') 로그아웃
         else
           li
             a(href='/posts/new') 호스팅 하기
