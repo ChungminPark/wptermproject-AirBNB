@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+  .container
+    h1 여행 목록
+    
+    table.table.table-bordered
+      thead
+        tr
+          th 주문번호
+          th 방이름
+          th 예약상태
+          th 숙소 인원
+          th 총비용
+          th 숙박기간
+          th 신청인원
+          th 신청날짜
+      tbody
+        each book in books
+          tr
+            td= book.id
+            td
+              a(href='/rooms/#{book.id}/host')= book.title
+            td= book.reservationStatus
+            td= book.capacity
+            td= book.fee
+            td #{moment(book.checkinDate).format('YYYY-MM-DD')} ~ #{moment(book.checkoutDate).format('YYYY-MM-DD')} 
+            td= book.capacity
+            td= moment(book.createdAt).format('YYYY-MM-DD HH:mm:ss')
+    
+  

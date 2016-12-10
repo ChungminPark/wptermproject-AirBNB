@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var Post = require('../models/Post');
+//var Post = require('../models/Post');
+var Room = require('../models/Room');
 var _ = require('lodash');
 
 var countries = [
@@ -8,12 +9,21 @@ var countries = [
  ];
 
 /* GET home page. */
+// router.get('/', function(req, res, next) {
+//   Post.find({}, function(err, posts) {
+//     if (err) {
+//       return next(err);
+//     }
+//     res.render('index', {posts: posts});
+//   });
+// });
+
 router.get('/', function(req, res, next) {
-  Post.find({}, function(err, posts) {
+  Room.find({}, function(err, rooms) {
     if (err) {
       return next(err);
     }
-    res.render('index', {posts: posts});
+    res.render('index', {rooms: rooms});
   });
 });
 
@@ -33,6 +43,6 @@ router.get('/suggest', function(req, res, next) {
   // JSON으로 결과를 return
   res.json(ret);
 });
-//활용예 -> http://localhost:3000/suggest?q=ja
+//활용 예 -> http://localhost:3000/suggest?q=ja
 
 module.exports = router;

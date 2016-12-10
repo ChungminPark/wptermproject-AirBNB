@@ -1,0 +1,41 @@
+extends ../layout
+
+block content
+  .container
+    h1.page-header 수정
+
+    form(action = "/rooms/#{room.id}?_method=PUT", method='POST')
+      .form-group
+        label(for='email') Email address
+        input.form-control(type='email', id='email', name='email', value=room.email)
+      .form-group
+        label(for='capacity') 수용 가능 인원
+        input.form-control(type='capacity', id='capacity', name='capacity', value=room.capacity)
+        label(for='fee') 비용
+        input.form-control(type='text', id='fee', name='fee',  value=room.fee)
+        label(for='city') 도시
+        input.form-control(type='text', id='city', name='city', value=room.city)              
+      .form-group
+        label(for='title') 방이름
+        input.form-control(type='text', id='title', name='title', value=room.title)
+      .form-group
+        label(for='address') 주소
+        input(type="text", id="postcode", placeholder="우편번호", name='postcode', value=room.postcode)
+        input(type="button", onclick="execDaumPostcode()", value="우편번호 찾기")
+        br
+        input.form-control(type="text", id="address", placeholder="주소", name='address', value=room.address)
+        input.form-control(type="text", id="address2", placeholder="상세주소", name='address2', value=room.address2)
+      .form-group      
+        label(for='content') 편의시설
+        textarea.form-control(id='content', rows='10', name='content')= room.content
+      .form-group      
+        label(for='content2') 이용규칙
+        textarea.form-control(id='content2', rows='5', name='content2')= room.content2        
+
+      div.form-actions
+        a.btn.btn-default(href='javascript:window.history.back();') 뒤로 
+        | 
+        button.btn.btn-primary(type='submit') 완료
+
+
+  script(type='text/javascript', src='/javascripts/address.js') 

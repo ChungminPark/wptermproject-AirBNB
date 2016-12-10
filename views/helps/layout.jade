@@ -15,16 +15,9 @@ html(lang='ko')
     script(src='/bower_components/lodash/lodash.min.js')
     script(src='/bower_components/moment/min/moment.min.js')
     
-    link(rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css")
-    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js")
-    script(src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js")
-    script(type='text/javascript', src='/javascripts/address.js') 
-    script(src="http://dmaps.daum.net/map_js_init/postcode.v2.js")
-    script(type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=66b9028c8fdb984ec5bddac45fa84c5e")
-    
   body
     block top-nav
-      include ./includes/topnav
+      include ../includes/topnav
     block hero-unit
     .main-content
       if flashMessages
@@ -36,4 +29,4 @@ html(lang='ko')
       block content
         
     block footer
-      include ./includes/footer
+      include ../includes/footer

@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  .container
+    .col-sm-6.col-md-5
+      br
+      h2 호스트가 될 준비를 시작해보세요.
+      br
+      br
+      h3 회원님의 숙소 유형은 무엇인가요?
+      br
+      a.btn.btn-primary.btn-lg(href="/rooms/#{currentUser._id}/small-room", role="button") 개인실
+      | 
+      a.btn.btn-primary.btn-lg(href="/rooms/#{currentUser._id}/middle-room", role="button") 다인실
+      | 
+      a.btn.btn-primary.btn-lg(href="/rooms/#{currentUser._id}/large-room", role="button") 집 전체    
+    .col-sm-6.col-md-5
+      .become-a-host
+        img(src="http://postfiles11.naver.net/MjAxNjEyMTBfMzQg/MDAxNDgxMzM5MzQyODAx.cJO_DfR-Sy932lecblL9MRZP7VXElX43xyR5KY8QR2Eg.4Y2CIQn2V4jUr1b4X5sxmjQtpgvM3_yjO4tZfUR8ui8g.JPEG.qkrcjdals/become-a-host.JPG?type=w2")

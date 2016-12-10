@@ -11,12 +11,14 @@ var mongoose   = require('mongoose');
 var passport = require('passport');
 var configAuth = require('./config/auth');
 
-var routes = require('./routes/index'),
-    users = require('./routes/users'),
-    tasks = require('./routes/tasks'),
-    help = require('./routes/help'),
-    message = require('./routes/message'),
-    posts = require('./routes/posts'); // 호스팅 하기
+var routes = require('./routes/index');
+var users = require('./routes/users');
+var helps = require('./routes/helps');
+var messages = require('./routes/messages');
+
+var host = require('./routes/host'); // 호스팅 하기1
+var books = require('./routes/books'); // 호스팅 하기2
+var rooms = require('./routes/rooms');
 
 var routeAuth = require('./routes/auth');
 
@@ -65,10 +67,13 @@ configAuth(passport);
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/tasks', tasks);
-app.use('/help', help);
-app.use('/posts', posts);
-app.use('/message', message);
+app.use('/helps', helps);
+app.use('/messages', messages);
+
+app.use('/host', host);
+app.use('/books', books);
+app.use('/rooms', rooms);
+
 routeAuth(app, passport);
 
 // catch 404 and forward to error handler

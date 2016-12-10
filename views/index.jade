@@ -6,33 +6,28 @@ block hero-unit
       h1 AirBNB
       h2 여행은 살아보는거랩니다. 
 block content            
-  .container
-    .row
-      .col-md-10
-        h3 여행은 살아보는거래
   #main.container.loading
     .row
       .col-sm-12
         include ./includes/homes-main
-        table.table.table-hover
-          thead
-            tr
-              th 이메일
-              th 제목
-              th 날짜
-              th 조회수
-              th
-          tbody
-            each post in posts
-              tr
-                td
-                  a(href='/posts/#{post.id}')= post.title
-                td= moment(post.createdAt).format('YYYY-MM-DD HH:mm:ss')
-                td= post.read
-                td
-                  a.btn.btn-xs.btn-default(href='/posts/#{post.id}/edit') 수정
-                  | 
-                  a.btn.btn-xs.btn-default(data-id=post.id, class='delete') 삭제
+        // my table
+        //- table.table.table-hover
+        //-   thead
+        //-     tr
+        //-       th 제목
+        //-       th 지역
+        //-       th 요금
+        //-       th 날짜
+        //-       th 조회수
+        //-   tbody
+        //-     each post in posts
+        //-       tr
+        //-         td
+        //-           a(href='/posts/#{post.id}')= post.title
+        //-         td= post.city
+        //-         td= post.fee
+        //-         td= moment(post.createdAt).format('YYYY-MM-DD HH:mm:ss')
+        //-         td= post.read
     .spinner
       .background
       .foreground
@@ -41,5 +36,4 @@ block content
         p Loading...  
   script(type='text/javascript', src='/javascripts/homes.js')
   script(type='text/javascript', src='/javascripts/autocomplete.js')
-
   

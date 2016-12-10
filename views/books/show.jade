@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  .container
+    h1 예약 신청자 정보
+    br
+    .form-group
+      h4 이름: #{book.name}
+      hr
+      h4 Email: 
+        a(href='/books/#{book.id}/profile')=book.applicantEmail        
+      hr
+      h4 인원수: #{book.capacity} / #{room.capacity}
+      hr
+      h4 사는 곳: #{book.address}
+      hr
+      h4 숙박기간: #{moment(book.checkinDate).format('YYYY-MM-DD')} ~ #{moment(book.checkoutDate).format('YYYY-MM-DD')}   

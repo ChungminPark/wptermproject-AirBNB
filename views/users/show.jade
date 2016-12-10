@@ -2,18 +2,25 @@ extends ../layout
 
 block content
   .container
-    h1.page-header 회원 정보
-          
-    ul
-      li 이름: #{user.name}
-      li 이메일: #{user.email}
+    h1 회원 정보
+    br
+    img(src='https://s-media-cache-ak0.pinimg.com/564x/a6/f9/65/a6f965560e00afc356a29861d70e8fc4.jpg', style='width:200px; height:200px;')
+    .description    
+      br
+      h3 이름: #{user.name}
+      h3 이메일: #{user.email}
       if user.facebook
-        li Facebook 
+        h3 Facebook 
           img.img-circle(src='#{user.facebook.photo}')
     hr
     p
-      a.btn.btn-default(href='/users/') 목록
-      | 
-      a.btn.btn-default(href='/users/#{user._id}/edit') 수정
-      | 
-      a.btn.btn-default(href='/users/#{user._id}?_method=DELETE') 삭제
+      if(currentUser.id == user.id)
+        a.btn.btn-default(href='/users/#{user._id}/edit') 정보 수정
+        | 
+        a.btn.btn-default(href='/users/#{user._id}?_method=DELETE') 아이디 삭제
+        | 
+        a.btn.btn-default(href='/books/#{user._id}/reservation-manager') 여행관리
+        | 
+        a.btn.btn-default(href='/books/#{user._id}/host-manager') 호스팅관리
+      
+      

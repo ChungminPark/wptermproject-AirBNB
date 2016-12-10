@@ -183,6 +183,10 @@ body {
 a {
   color: #00B7FF; }
 
+#roomtitle {
+  font-size: 1.2em;
+  color: #abb1b4; }
+
 .container #inbox {
   font-size: 1.4em;
   border: 1px solid;
@@ -191,6 +195,27 @@ a {
   width: 10em;
   box-sizing: border-box; }
 
+.container .post-show h1 {
+  font-size: 4em; }
+
+.container .post-show #email {
+  font-size: 1em;
+  float: right; }
+
+.container .post-show #time {
+  font-size: 1em;
+  float: right; }
+
+.container .post-show #fee {
+  font-size: 2em;
+  float: right; }
+
+.container .post-show #all {
+  float: right; }
+
+.form-checkdate {
+  width: 25%; }
+
 .jumbotron {
   margin-top: -1em;
   background: url("https://cdn-images-1.medium.com/max/2000/1*oMCH6q6iKk83BXnQQw_E1g.png") no-repeat left top;
@@ -198,7 +223,7 @@ a {
   -moz-background-size: 100%;
   -o-background-size: 100%;
   background-size: 100%;
-  min-height: 50em;
+  min-height: 45em;
   color: #fff;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); }
 
@@ -222,6 +247,34 @@ a {
   .jumbotron-help h1 {
     color: #fff;
     margin-left: 35%; }
+
+.jumbotron-host {
+  margin-top: -1em;
+  background: url("https://a1.muscache.com/airbnb/static/launch_platform/host/host_hero_large@2x-1d82731e29b8d843b2573ebaa173e8eb.png") no-repeat left top;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  min-height: 50em;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); }
+  .jumbotron-host #first-h2 {
+    margin-top: 10%; }
+
+.jumbotron-reservation {
+  margin-top: -1em;
+  background: url("http://www.cheaphotelreservation.org/images/lmt-header.jpg") no-repeat left top;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  min-height: 30em;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); }
+  .jumbotron-reservation #first-h2 {
+    margin-top: 10%; }
+
+.become-a-host {
+  margin-left: 25%;
+  margin-right: 15%; }
 
 .form-actions {
   padding: 19px 20px 20px;
@@ -265,3 +318,16 @@ a {
       list-style-type: none; }
       .form .suggest-box li:hover {
         background-color: #659CD8; }
+
+.btn-reservation {
+  float: right; }
+
+.float-right {
+  float: right; }
+
+.description {
+  color: #8f8f8f; }
+
+.rooms-show-fee {
+  background-color: #202020;
+  color: #c9c9c9; }

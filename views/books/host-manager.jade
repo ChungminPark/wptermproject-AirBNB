@@ -1,0 +1,82 @@
+extends ../layout
+
+block content
+  .container
+    h1 호스팅 관리
+    br
+    h2 호스팅 신청 목록
+    br
+    table.table.table-bordered
+      thead
+        tr
+          th 도시
+          th 방이름
+          th 최대 인원
+          th 가격
+          th 예약상태
+          th 등록시간
+          th 조회수
+          th 
+      tbody
+        each room in rooms
+          if (room.reservationStatus == "예약가능")
+            tr
+              td= room.address
+              td
+                a(href='/rooms/#{room.id}')= room.title
+              td= room.capacity
+              td= room.fee
+              td 
+                span= room.reservationStatus
+              td= moment(room.createdAt).format('YYYY-MM-DD HH:mm:ss')
+              td= room.read
+              td
+                a.btn.btn-xs.btn-default(href='/rooms/#{room.id}/edit') 수정
+                | 
+                a.btn.btn-xs.btn-default(data-id=room.id, class='delete') 삭제
+          if (room.reservationStatus == "예약진행중")
+            tr
+              td= room.address
+              td
+                a(href='/rooms/#{room.id}')= room.title
+              td= room.capacity
+              td= room.fee
+              td 
+                span= room.reservationStatus
+              td
+                a.btn.btn-xs.btn-default(href='/books/#{room.id}/show') 상세보기
+              td= room.read
+              td
+                a.btn.btn-xs.btn-default(href='/books/#{room.id}/accept?_method=PUT') 수락
+                | 
+                a.btn.btn-xs.btn-default(href='/books/#{room.id}/refuse?_method=PUT') 거절
+    br
+    h2 호스팅 완료
+    br
+    table.table.table-bordered
+          thead
+            tr
+              th 도시
+              th 방이름
+              th 최대인원
+              th 가격
+              th 예약상태
+              th 등록시간
+              th 조회수
+              th 
+          tbody
+            each room in rooms
+              if (room.reservationStatus == "예약완료")
+                tr
+                  td= room.address
+                  td
+                    a(href='/rooms/#{room.id}')= room.title
+                  td= room.capacity
+                  td= room.fee
+                  td 
+                    span= room.reservationStatus
+                  td= moment(room.createdAt).format('YYYY-MM-DD HH:mm:ss')
+                  td= room.read
+                  td
+                    a.btn.btn-xs.btn-default(href='/books/#{room.id}/refuse?_method=PUT') 취소
+  

@@ -1,0 +1,59 @@
+extends ../layout
+
+block content
+  .container
+    h1 예약 하기
+    br
+    form(action='/books/#{room.id}', method='POST')
+      .form-group
+        label(for='name') 예약자 이름
+        input.form-control(type='text', id='name', name='name', placeholder='Your name', value=user.name)
+        br
+        label(for='applicantEmail') 예약자 이메일
+        input.form-control(type='applicantEmail', id='applicantEmail', name='applicantEmail', placeholder='applicantEmail', value=user.email)
+        br
+        label(for='hostEmail') 호스트 이메일
+        input.form-control(type='hostEmail', id='hostEmail', name='hostEmail', placeholder='hostEmail', value=room.email)
+        br
+        label(for='capacity') 최대 인원
+        input.form-control(type='capacity', id='capacity', name='capacity', placeholder=room.capacity)
+        br
+        label(for='Date') 예약 날짜 
+        input.form-control(type='text', id='checkinDate', name='Date', placeholder='checkin date')
+        br
+        input.form-control(type='text', id='checkoutDate', name='checkoutDate', placeholder='checkout date')
+        br
+        br
+        .float-right
+          a.btn.btn-default(href='javascript:window.history.back();') 뒤로 
+          | 
+          button.btn.btn-primary(type='submit') 신청하기
+
+
+  script(type='text/javascript').
+    $( function() {
+    var dateFormat = "mm/dd/yy",
+      from = $( "#checkinDate" )
+        .datepicker({
+          changeMonth: true,
+        })
+        .on( "change", function() {
+          to.datepicker( "option", "minDate", getDate( this ) );
+        }),
+      to = $( "#checkoutDate" ).datepicker({
+        changeMonth: true,
+        maxDate:"+1M"
+      })
+      .on( "change", function() {
+        from.datepicker( "option", "maxDate", getDate( this ) );
+      });
+    function getDate( element ) {
+      var date;
+      try {
+        date = $.datepicker.parseDate( dateFormat, element.value );
+      } catch( error ) {
+        date = null;
+      }
+      return date;
+      }
+    });
