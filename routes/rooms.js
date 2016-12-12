@@ -121,7 +121,7 @@ router.post('/', function(req, res, next) {
       return next(err);
     }
     if (room) {
-      req.flash('danger', '동일한 방이름이 있습니다.');
+      req.flash('danger', '중복된 방이름이 있습니다.');
       res.redirect('back');
     }
     var newRoom = new Room({
@@ -143,7 +143,7 @@ router.post('/', function(req, res, next) {
       if (err) {
         return next(err);
       }
-      req.flash('success', '방이 등록되었습니다.');
+      req.flash('success', '방이 정상적으로 등록되었습니다.');
       res.redirect('/');
     });
   });
@@ -162,7 +162,7 @@ router.put('/:id', function(req, res, next) {
       if (err) {
         return next(err);
       }
-      req.flash('success', '숙소 정보가 변경되었습니다.');
+      req.flash('success', '정보가 정상적으로 변경되었습니다.');
       res.redirect('/rooms/lists');
     });
   });
@@ -173,7 +173,7 @@ router.delete('/:id', function(req, res, next) {
     if (err) {
       return next(err);
     }
-    req.flash('success', '등록된 숙소가 삭제되었습니다.');
+    req.flash('success', '숙소가 정상적으로 삭제되었습니다.');
     res.redirect('/rooms/lists');
   });
 });

@@ -2,8 +2,10 @@ extends ../layout
 
 block content
   .container
-    h1.page-header Room List
-      a(href='/rooms/lists') (전체 보기)
+    h1.page-header 숙소 정보
+    a.float-right(href='/rooms/lists') 전체 보기
+    br
+    br
     form(action="/rooms/search", method='POST')
       .row
         .col-lg-6
@@ -11,7 +13,7 @@ block content
             input(type="text",name='search',id='search', class="form-control" placeholder="도시를 입력해주세요")
             span.input-group-btn
               button.btn.btn-default(type="submit" ) Search
-    br
+    br          
     .row
       each room in rooms
         .col-sm-4.col-md-3

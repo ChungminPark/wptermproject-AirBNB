@@ -94,7 +94,7 @@ router.put('/:id', function(req, res, next) {
       if (err) {
         return next(err);
       }
-      req.flash('success', '사용자 정보가 변경되었습니다.');
+      req.flash('success', '사용자정보가 변경되었습니다.');
       res.redirect('/users');
     });
   });
@@ -105,7 +105,7 @@ router.delete('/:id', function(req, res, next) {
     if (err) {
       return next(err);
     }
-    req.flash('success', '사용자 계정이 삭제되었습니다.');
+    req.flash('success', '사용자계정이 삭제되었습니다.');
     res.redirect('/users');
   });
 });

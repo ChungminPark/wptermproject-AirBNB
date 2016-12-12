@@ -10,8 +10,8 @@ block content
       h4 Email: 
         a(href='/books/#{book.id}/profile')=book.applicantEmail        
       hr
-      h4 인원수: #{book.capacity} / #{room.capacity}
+      h4 이용자수: #{book.capacity} / #{room.capacity}
       hr
-      h4 사는 곳: #{book.address}
+      h4 거주지: #{book.address}
       hr
       h4 숙박기간: #{moment(book.checkinDate).format('YYYY-MM-DD')} ~ #{moment(book.checkoutDate).format('YYYY-MM-DD')}   

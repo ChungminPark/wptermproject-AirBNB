@@ -7,7 +7,7 @@ block content
     .col-md-10 
       br
       h1 #{room.title}
-      p #{room.city} 
+      p #{room.city} #{room.address} #{room.address2}
       .float-right
        p #{room.email}
     br
@@ -24,47 +24,47 @@ block content
         p #{room.fee} 원
         hr
         h3 설명
-        p #{room.content1}
+        p #{room.content}
         hr
         h3 숙소 이용규칙
         p #{room.content2}
-        
         hr
         h2 호스트: #{room.email}님
-        h3.description #{room.city}
+        h3.description #{room.city} #{room.address1} #{room.address2}
       .col-md-12  
         hr
       .col-md-12
         #map(style='width:100%; height:50em; margin-top:10%')
-        script(type='text/javascript', src='//apis.daum.net/maps/maps3.js?apikey=66b9028c8fdb984ec5bddac45fa84c5e')
-        script.
-          var container = document.getElementById('map');
-          var options = {
-            center: new daum.maps.LatLng(33.450701, 126.570667),
-            level: 3
-          };
-          var map = new daum.maps.Map(container, options);
-        br
+          script(type='text/javascript', src='//apis.daum.net/maps/maps3.js?apikey=cb17b1c16c0c3ca63baadd4c4550e8f6')
+          script.
+            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                mapOption = {
+                  center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                  level: 4 // 지도 확대, 축소 레벨
+                };
+            // 지도를 생성합니다    
+            var map = new daum.maps.Map(mapContainer, mapOption); 
+            // 주소-좌표 변환 객체를 생성합니다
+            var geocoder = new daum.maps.services.Geocoder();
+            // 주소로 좌표를 검색합니다
+            geocoder.addr2coord('#{room.address}', function(status, result) {
+                // 정상적으로 검색이 완료됐으면 
+                if (status === daum.maps.services.Status.OK) {
+                    var coords = new daum.maps.LatLng(result.addr[0].lat, result.addr[0].lng);
+                    // 결과값으로 받은 위치를 마커로 표시합니다
+                    var marker = new daum.maps.Marker({
+                        map: map,
+                        position: coords
+                    });
+                    // 인포윈도우로 장소에 대한 설명을 표시합니다
+                    var infowindow = new daum.maps.InfoWindow({
+                        content: '<div style="width:150px;text-align:center;padding:6px 0;">우리회사</div>'
+                    });
+                    infowindow.open(map, marker);
+                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                    map.setCenter(coords);
+                } 
+            });    
+          br
     a.btn.btn-default(href='/rooms/lists') 목록
     a.btn.btn-default(href='/books/#{room._id}/') 예약하기
-
-
-    script(type='text/javascript').
-      var container = document.getElementById('map'), //지도를 담을 영역의 DOM 레퍼런스
-      options = { //지도를 생성할 때 필요한 기본 옵션
-        center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-        level: 3 // 지도 확대, 축소 레벨
-      };
-      //수정필요 
-      var map = new daum.maps.Map(container, options); //지도 생성 및 객체 리턴
-      // 주소-좌표 변환 객체를 생성합니다
-      var geocoder = new daum.maps.services.Geocoder();
-
-      
-      script(type='text/javascript', src='//apis.daum.net/maps/maps3.js?apikey=66b9028c8fdb984ec5bddac45fa84c5e')
-      
-      script(type='text/javascript', src='//apis.daum.net/maps/maps3.js?apikey=APIKEY&libraries=LIBRARY')
-      // services 라이브러리 불러오기
-      script(type='text/javascript', src='//apis.daum.net/maps/maps3.js?apikey=APIKEY&libraries=services')
-      // services와 clusterer, drawing 라이브러리 불러오기
-      script(type='text/javascript', src='//apis.daum.net/maps/maps3.js?apikey=APIKEY&libraries=services,clusterer,drawing')

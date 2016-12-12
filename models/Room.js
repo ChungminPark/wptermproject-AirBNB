@@ -4,6 +4,9 @@ var mongoose = require('mongoose'),
 var schema = new Schema({
   email: {type: String, required: true, trim: true},
   title:{type: String, unique: true, required: true},
+  fee:{type: Number, default: 0},
+  capacity:{type: Number, default: 0},
+  reservationStatus:{type: String, required: true},
   content:{type: String, required: true},
   content2:{type: String, required: true},
   city:{type: String, required: true},
@@ -11,9 +14,6 @@ var schema = new Schema({
   address2: {type: String, required: true},
   postcode: {type: String, required: true},
   roomtype:{type: String, required: true},
-  fee:{type: Number, default: 0},
-  capacity:{type: Number, default: 0},
-  reservationStatus:{type: String, required: true},
   read:{type: Number, default: 0},
   createdAt: {type: Date, default: Date.now}
 }, {
