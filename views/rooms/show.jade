@@ -35,7 +35,7 @@ block content
         hr
       .col-md-12
         #map(style='width:100%; height:50em; margin-top:10%')
-          script(type='text/javascript', src='//apis.daum.net/maps/maps3.js?apikey=cb17b1c16c0c3ca63baadd4c4550e8f6')
+          script(type='text/javascript', src='//apis.daum.net/maps/maps3.js?apikey=cb17b1c16c0c3ca63baadd4c4550e8f6&libraries=services')
           script.
             var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
                 mapOption = {
@@ -58,7 +58,7 @@ block content
                     });
                     // 인포윈도우로 장소에 대한 설명을 표시합니다
                     var infowindow = new daum.maps.InfoWindow({
-                        content: '<div style="width:150px;text-align:center;padding:6px 0;">우리회사</div>'
+                        content: '<div style="width:150px;text-align:center;padding:6px 0;">#{room.title}</div>'
                     });
                     infowindow.open(map, marker);
                     // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
