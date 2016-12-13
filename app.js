@@ -16,8 +16,8 @@ var users = require('./routes/users');
 var helps = require('./routes/helps');
 var messages = require('./routes/messages');
 
-var host = require('./routes/host'); // 호스팅 하기1
-var books = require('./routes/books'); // 호스팅 하기2
+var host = require('./routes/host');
+var books = require('./routes/books');
 var rooms = require('./routes/rooms');
 
 var routeAuth = require('./routes/auth');
